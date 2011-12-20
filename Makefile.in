@@ -27,8 +27,8 @@ YACC = @YACC@
 VALGRIND = GLIBCPP_FORCE_NEW=1 GLIBCXX_FORCE_NEW=1 @VALGRIND@
 UNITRUNNER = build/UnitRunner@EXEEXT@
 
-DEBCXXFLAGS = -DDEBUG -fno-inline -g3 -ggdb3 -Wshadow -O0 @DEBGCC3@ @GCC4DEB@
-CFLGS = @GCC3@ -x c++
+DEBCXXFLAGS = -DDEBUG -fno-inline -g3 -ggdb3 -Wshadow -O0 @DEBGCC3@ @GCC4DEB@ -I/usr/include/tcl
+CFLGS = @GCC3@ -x c++ -I/usr/include/tcl
 
 MAKE_BDLIB = $(MAKE) 'MAKE=$(MAKE)' 'CXX=$(CXX)' 'LD=$(LD)' 'CCDEPMODE=$(CCDEPMODE)' \
 'STRIP=$(STRIP)' 'CFLGS=$(CFLGS) @NOUNITSGCC3@' 'LIBS=$(LIBS)' 'BINBUILD=(distrib)'
